@@ -1,5 +1,7 @@
 # pragma once
 class Assessment {
+protected:
+	string courseID;
 	float maxScore;
 	float rawScore;
 public:

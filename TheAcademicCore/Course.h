@@ -9,6 +9,7 @@ using namespace std;
 class Course {
     string	CourseID;
 	string	TeacherID;
+	string courseName;
 	vector<student*> obj;
 public:
 

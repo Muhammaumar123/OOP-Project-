@@ -1,8 +1,9 @@
 #pragma once
 #include"Assessment.h"
-#include"Course.h"
+#include<string>
 class Quiz :public Assessment {
 	int QuizNo;
+	string type;
 public:
 	Quiz() {
 		type = "Quiz";
@@ -11,7 +12,7 @@ public:
 		courseID = "";
 		QuizNo = 0;
 	}
-	Quiz(int QuizNo; float rawScore, float maxScore, string courseID, string type = "Quiz")
+	Quiz(int QuizNo, float rawScore, float maxScore, string courseID, string type = "Quiz")
 	{
 		this->QuizNo = QuizNo;
 		this->rawScore = rawScore;

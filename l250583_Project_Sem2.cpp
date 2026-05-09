@@ -8,13 +8,16 @@
 #include "AcademicEntities/Teacher.h"
 
 // The Academic Core
-#include "The Academic Core/Assessment.h"
-#include "The Academic Core/Course.h"
-#include "The Academic Core/Exam.h"
-#include "The Academic Core/Quiz.h"
+#include "TheAcademicCore/Assessment.h"
+#include "TheAcademicCore/Course.h"
+#include "TheAcademicCore/Exam.h"
+#include "TheAcademicCore/Quiz.h"
+
 using namespace std;
 int main() {
-	
+	Assessment* obj = new Quiz(1,2,100,"709", "Quiz");
+	obj->display();
+
 	system("pause");
 	return 0;
 }
