@@ -58,6 +58,7 @@ public:
 		else
 		{
 			cout << "File Not Found " << endl;
+			Teachers.close();
 		}
 	}
 };

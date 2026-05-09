@@ -2,6 +2,7 @@
 #include"Assessment.h"
 #include<string>
 #include <iostream>  
+#include<fstream>
 class Quiz :public Assessment {
 	int QuizNo;
 	string type;
@@ -28,5 +29,16 @@ public:
 		cout << endl << "Raw Score : " << rawScore;
 		cout << endl;
 	}
-
+	void save_to_file() {
+		ofstream Quizzes("Quizzes.txt");
+		if (Quizzes.is_open())
+		{
+			Quizzes << courseID << " " << "|" << " " << QuizNo << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << endl;
+		}
+		else
+		{
+			cout << "File Not Found !"; cout << endl;
+			Quizzes.close();
+		}
+	}
 };

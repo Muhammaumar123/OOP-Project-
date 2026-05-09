@@ -2,6 +2,7 @@
 #include "Assessment.h"
 #include <string>
 #include <iostream>
+#include<fstream>
 using namespace std;
 
 class Exam : public Assessment {
@@ -25,5 +26,17 @@ public:
 		cout << endl << "Max Score : " << maxScore;
 		cout << endl << "Raw Score : " << rawScore;
 		cout << endl;
+	}
+	void save_to_file() {
+		ofstream Exams("Exams.txt");
+		if (Exams.is_open())
+		{
+	         Exams << courseID  << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << endl;
+		}
+		else
+		{
+			cout << "File Not Found !"; cout << endl;
+			Exams.close();
+		}
 	}
 };
