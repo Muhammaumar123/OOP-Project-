@@ -3,9 +3,11 @@
 #include"Abstract.h"
 using namespace std;
 class Teacher:public Abstract {
+
 	float AverageFeedback;
 	char ** list;
 	int number;//for now assuming that each teacher can be assigned a specific number of course IDs
+
 public:
 	Teacher() {
 		name = "";
@@ -44,7 +46,7 @@ public:
 	void Feedback() {}
 
 	~Teacher() {
-		delete list;
+		delete[] list;
 	}
 
 	void save_to_file() {
@@ -55,7 +57,7 @@ public:
 		}
 		else
 		{
-			cout<<
+			cout << "File Not Found " << endl;
 		}
 	}
 };

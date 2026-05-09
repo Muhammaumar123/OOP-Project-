@@ -1,6 +1,7 @@
 #pragma once
 #include"Assessment.h"
 #include<string>
+#include <iostream>  
 class Quiz :public Assessment {
 	int QuizNo;
 	string type;

@@ -4,16 +4,16 @@
 #include <iostream>
 using namespace std;
 
-class Exam : public Assessment {
+class Assignment : public Assessment {
 	string type;
 public:
-	Exam() {
-		this->type = "";
+	Assignment() {
+		this->type = "";//Solo or gr
 		this->courseID = "";
-		this->maxScore=0.0;
-		this->rawScore=0.0;
+		this->maxScore = 0.0;
+		this->rawScore = 0.0;
 	}
-	Exam(string type, string CourseID, float maxScore, float rawScore) {
+	Assignment(string type, string CourseID, float maxScore, float rawScore) {
 		this->type = type;
 		this->courseID = CourseID;
 		this->maxScore = maxScore;

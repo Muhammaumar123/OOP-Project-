@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "AcademicEntities/student.h"    
+#include "../AcademicEntities/student.h"    
 #include "Assessment.h"                   
 using namespace std;
 class Course {
