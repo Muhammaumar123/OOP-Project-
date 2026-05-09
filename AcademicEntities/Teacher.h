@@ -61,4 +61,10 @@ public:
 			Teachers.close();
 		}
 	}
+	float getAverageFeedback() { 
+		return AverageFeedback;
+	}
+	void setAverageFeedback(float f) {
+		this->AverageFeedback = f;
+	}
 };

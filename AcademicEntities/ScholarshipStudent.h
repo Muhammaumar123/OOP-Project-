@@ -73,4 +73,19 @@ public:
 		return GPA;
 	}
 	void viewTranscript() override {/*need some more data first*/}
+	float getGPA() { 
+		return GPA; 
+	}
+	void setGPA(float gpa) {
+		this->GPA = gpa;
+	}
+	float getMinGPA() { 
+		return minGPA;
+	}
+	void setMinGPA(float m) {
+		this->minGPA = m; 
+	}
+	string getStatus() { 
+		return status;
+	}
 };

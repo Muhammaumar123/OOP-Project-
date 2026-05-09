@@ -49,4 +49,14 @@ public:
 		cout << "GPA : " << GPA << endl;
 	}
 	void viewTranscript() override{/*need some more data first*/ }
+	float getGPA() {
+		return GPA;
+	}
+	void setGPA(float gpa) {
+		this->GPA = gpa; 
+	}
+	string getType() {
+		return type; 
+	}
+
 };

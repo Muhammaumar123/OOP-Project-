@@ -51,4 +51,14 @@ class ExchangeStudent :public student{
 			cout << "Percentage : " << percentage<< endl;
 		}
 		void viewTranscript() override {/*need some more data first*/ }
+		float getPercentage() { 
+			return percentage;
+		}
+		void setPercentage(float p) {
+			this->percentage = p;
+			this->P_F = (p >= 50) ? "Pass" : "Fail";
+		}
+		string getPF() { 
+			return P_F;
+		}
 };
