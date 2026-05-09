@@ -14,6 +14,7 @@ protected:
 	float creditHours;
 	int capacity;
 	vector<student*> EnrolledStudents;
+	vector<Assessment*> Assessments;
 public:
 	Course() {
 		courseID="";
@@ -22,6 +23,8 @@ public:
 		creditHours=0.0;
 		capacity=0;
 	}
+	virtual int getExamDuration() = 0;
+	virtual float FinalGrade() = 0;
 	string getCourseID() { 
 		return courseID;
 	}

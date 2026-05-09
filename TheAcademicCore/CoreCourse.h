@@ -4,6 +4,7 @@
 #include<fstream>
 #include"Exam.h"
 class CoreCourse : public Course {
+	
 public:
 	CoreCourse() {
 		courseID="";
@@ -21,7 +22,7 @@ public:
 		this->capacity = capacity;
 	}
 	void enrollStudents(student* enroll) { 
-		if (EnrolledStudents.size() > capacity) {
+		if (EnrolledStudents.size() >= capacity) {
 			cout << "Capacity Full ! Cannot Enroll more students." << endl;
 			return;
 		}
@@ -39,7 +40,64 @@ public:
 		cout << enroll->getName() << " enrolled successfully!" << endl;
 		
 	}
-	//CoreCOurse has an exam so need some exam stuff here
-	
+	//CoreCourse has an exam so need some exam stuff here
+	void display() override {
+		cout << "Course ID    : " << courseID << endl;
+		cout << "Course Name  : " << courseName << endl;
+		cout << "Teacher ID   : " << teacherID << endl;
+		cout << "Credit Hours : " << creditHours << endl;
+		cout << "Capacity     : " << capacity << endl;
+		cout << "Enrolled     : " << EnrolledStudents.size() << "/" << capacity << endl;
+	}
+	void list() {
+		for (student* x : EnrolledStudents) {
+			cout << x->getID() << " - " << x->getName() << endl;
+		}
+	}
+	int getExamDuration() override { 
+		return 3; 
+	}
+	float FinalGrade(string StudentID) {
+		float finalGrade;
+		float Mid1Total = 0, Mid1Max = 0;
+		float Mid2Total = 0, Mid2Max = 0;
+		float FinalTotal = 0, FinalMax = 0;
+		float QuizTotal = 0, QuizMax = 0;
+		float AssgnTotal = 0, AssgnMax = 0;
 
+		for (Assessment* x : Assessments) {
+			if (x->getStudentID() == StudentID) {
+				if (x->getType() == "Mid1") {
+					Mid1Total += x->getRawScore();
+					Mid1Max += x->getMaxScore();
+				}
+				else if (x->getType() == "Mid2") {
+					Mid2Total += x->getRawScore();
+					Mid2Max += x->getMaxScore();
+				}
+				else if (x->getType() == "Quiz")
+				{
+					QuizTotal += x->getRawScore();
+					QuizMax += x->getMaxScore();
+				}
+				else if (x->getType() == "Final") {
+					FinalTotal += x->getRawScore();
+					FinalMax += x->getMaxScore();
+				}
+			}
+		}//Now the marks have beeen stored
+		
+		//time to calculate the percentages
+		//using ternary operator becuz it is easy 
+
+		float Mid1Percentage = (Mid1Max > 0) ? (Mid1Total / Mid1Max) * 100 : 0;
+		float Mid2Percentage = (Mid2Max > 0) ? (Mid2Total / Mid2Max) * 100 : 0;
+		float FinalPercentage = (FinalMax > 0) ? (FinalTotal / FinalMax) * 100 : 0;
+		float QuizPercentage = (QuizMax > 0) ? (QuizTotal / QuizMax) * 100 : 0;
+		float AssgnPercentage = (AssgnMax > 0) ? (AssgnTotal / AssgnMax) * 100 : 0;
+		
+
+		finalGrade = (Mid1Percentage*0.15)+(Mid2Percentage*0.15)+(FinalPercentage*0.50)+(QuizPercentage*0.10)+(AssgnPercentage*0.10);
+		return finalGrade;
+	}
 };
