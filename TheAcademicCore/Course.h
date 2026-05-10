@@ -24,7 +24,7 @@ public:
 		capacity=0;
 	}
 	virtual int getExamDuration() = 0;
-	virtual float FinalGrade() = 0;
+	virtual float FinalGrade(string StudentID) = 0;
 	string getCourseID() { 
 		return courseID;
 	}

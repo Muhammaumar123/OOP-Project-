@@ -57,7 +57,7 @@ public:
 	int getExamDuration() override { 
 		return 3; 
 	}
-	float FinalGrade(string StudentID) {
+	float FinalGrade(string StudentID) override {
 		float finalGrade;
 		float Mid1Total = 0, Mid1Max = 0;
 		float Mid2Total = 0, Mid2Max = 0;
@@ -80,6 +80,10 @@ public:
 					QuizTotal += x->getRawScore();
 					QuizMax += x->getMaxScore();
 				}
+				else if (x->getType() == "Assignment") {
+					AssgnTotal += x->getRawScore();
+					AssgnMax += x->getMaxScore();
+				}
 				else if (x->getType() == "Final") {
 					FinalTotal += x->getRawScore();
 					FinalMax += x->getMaxScore();
@@ -99,5 +103,16 @@ public:
 
 		finalGrade = (Mid1Percentage*0.15)+(Mid2Percentage*0.15)+(FinalPercentage*0.50)+(QuizPercentage*0.10)+(AssgnPercentage*0.10);
 		return finalGrade;
+	}
+	void save_to_file() {
+		ofstream CoreCourses("CoreCourse.txt");
+		if (CoreCourses.is_open()) {
+			CoreCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity <<" "<<"|"<<" "<<"Core" << endl;
+		}
+		else
+		{
+			cout << "File Not Found !" << endl;
+			CoreCourses.close();
+		}
 	}
 };
