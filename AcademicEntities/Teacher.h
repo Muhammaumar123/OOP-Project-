@@ -50,7 +50,7 @@ public:
 	}
 
 	void save_to_file() {
-		ofstream Teachers("Teachers.txt");
+		ofstream Teachers("Teachers.txt",ios::app);
 		if (Teachers.is_open())
 		{
 			Teachers << ID << "|" << name << "|" << email << "|" << AverageFeedback << endl;

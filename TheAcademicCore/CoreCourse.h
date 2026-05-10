@@ -105,7 +105,7 @@ public:
 		return finalGrade;
 	}
 	void save_to_file() {
-		ofstream CoreCourses("CoreCourse.txt");
+		ofstream CoreCourses("CoreCourse.txt",ios::app);
 		if (CoreCourses.is_open()) {
 			CoreCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity <<" "<<"|"<<" "<<"Core" << endl;
 		}

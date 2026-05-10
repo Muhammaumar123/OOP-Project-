@@ -105,7 +105,7 @@ public:
 		return finalGrade;
 	}
 	void save_to_file() {
-		ofstream ElectiveCourses("ElectiveCourse.txt");
+		ofstream ElectiveCourses("ElectiveCourse.txt",ios::app);
 		if (ElectiveCourses.is_open()) {
 			ElectiveCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity<<" "<<"|"<<" "<<"Elective" << endl;
 		}

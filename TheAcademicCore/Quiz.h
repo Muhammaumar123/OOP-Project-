@@ -16,7 +16,7 @@ public:
 		QuizNo = 0;
 		wt = 0.0;
 	}
-	Quiz(int QuizNo, float rawScore, float maxScore, string courseID, string type = "Quiz", float wt)
+	Quiz(int QuizNo, float rawScore, float maxScore, string courseID, float wt, string type = "Quiz")
 	{
 		this->QuizNo = QuizNo;
 		this->rawScore = rawScore;
@@ -34,7 +34,7 @@ public:
 		cout << endl;
 	}
 	void save_to_file() {
-		ofstream Quizzes("Quizzes.txt");
+		ofstream Quizzes("Quizzes.txt",ios::app);
 		if (Quizzes.is_open())
 		{
 			Quizzes << courseID << " " << "|" << " " << QuizNo << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " <<"|"<<" "<<"Weightage : "<<" "<<"|"<<" "<<wt << endl;

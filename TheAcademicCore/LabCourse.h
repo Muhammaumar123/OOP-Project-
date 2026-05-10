@@ -98,7 +98,7 @@ public:
 		return finalGrade;
 	}
 	void save_to_file() {
-		ofstream LabCourses("LabCourse.txt");
+		ofstream LabCourses("LabCourse.txt",ios::app);
 		if (LabCourses.is_open()) {
 			LabCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity <<" "<<"|"<<" "<<"LabCourse" << endl;
 		}

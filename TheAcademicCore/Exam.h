@@ -31,7 +31,7 @@ public:
 		cout << endl<<"Wightage : "<<wt<<endl;
 	}
 	void save_to_file() {
-		ofstream Exams("Exams.txt");
+		ofstream Exams("Exams.txt",ios::app);
 		if (Exams.is_open())
 		{
 	         Exams << courseID  << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " <<"|"<<" "<<"Weightage : " << wt << endl;

@@ -32,7 +32,7 @@ public:
 		cout << endl;
 	}
 	void save_to_file() {
-		ofstream Assignments("Assignments.txt");
+		ofstream Assignments("Assignments.txt",ios::app);
 		if (Assignments.is_open())
 		{
 			Assignments << courseID << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << "|"<<" "<<"Weightage : "<<wt<<endl;

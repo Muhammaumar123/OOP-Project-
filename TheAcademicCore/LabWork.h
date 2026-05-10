@@ -34,7 +34,7 @@ public:
 		cout << endl;
 	}
 	void save_to_file() {
-		ofstream LabWorks("LabWorks.txt");
+		ofstream LabWorks("LabWorks.txt",ios::app);
 		if (LabWorks.is_open())
 		{
 			LabWorks << courseID << " " << "|" << " " << LabWorkNo << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << "|" << " " << "Weightage : " << " " << "|" << " " << wt << endl;
