@@ -108,11 +108,12 @@ public:
 		ofstream CoreCourses("CoreCourse.txt",ios::app);
 		if (CoreCourses.is_open()) {
 			CoreCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity <<" "<<"|"<<" "<<"Core" << endl;
+			CoreCourses.close();
 		}
 		else
 		{
 			cout << "File Not Found !" << endl;
-			CoreCourses.close();
+			
 		}
 	}
 };

@@ -38,11 +38,12 @@ public:
 		if (LabWorks.is_open())
 		{
 			LabWorks << courseID << " " << "|" << " " << LabWorkNo << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << "|" << " " << "Weightage : " << " " << "|" << " " << wt << endl;
+			LabWorks.close();
 		}
 		else
 		{
 			cout << "File Not Found !"; cout << endl;
-			LabWorks.close();
+			
 		}
 	}
 	string getType() override {

@@ -101,11 +101,12 @@ public:
 		ofstream LabCourses("LabCourse.txt",ios::app);
 		if (LabCourses.is_open()) {
 			LabCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity <<" "<<"|"<<" "<<"LabCourse" << endl;
+			LabCourses.close();
 		}
 		else
 		{
 			cout << "File Not Found !" << endl;
-			LabCourses.close();
+			
 		}
 	}
 };

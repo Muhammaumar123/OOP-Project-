@@ -16,12 +16,13 @@ public:
 		this->rawScore=0.0;
 		this->wt = 0.0;
 	}
-	Exam(string type, string CourseID, float maxScore, float rawScore,float wt) {
+	Exam(string type,string StudentID, string CourseID, float maxScore, float rawScore,float wt) {
 		this->type = type;
 		this->courseID = CourseID;
 		this->maxScore = maxScore;
 		this->rawScore = rawScore;
 		this->wt = wt;
+		this->studentID = StudentID;
 	}
 	void display() override {
 		cout << "Course ID :" << courseID;
@@ -35,11 +36,11 @@ public:
 		if (Exams.is_open())
 		{
 	         Exams << courseID  << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " <<"|"<<" "<<"Weightage : " << wt << endl;
+			 Exams.close();
 		}
 		else
 		{
 			cout << "File Not Found !"; cout << endl;
-			Exams.close();
 		}
 	}
 	string getType() override {

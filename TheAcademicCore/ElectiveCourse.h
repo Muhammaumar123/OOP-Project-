@@ -108,11 +108,12 @@ public:
 		ofstream ElectiveCourses("ElectiveCourse.txt",ios::app);
 		if (ElectiveCourses.is_open()) {
 			ElectiveCourses << courseID << " " << "|" << " " << courseName << " " << "|" << " " << teacherID << " " << "|" << " " << creditHours << " " << "|" << " " << capacity<<" "<<"|"<<" "<<"Elective" << endl;
+			ElectiveCourses.close();
 		}
 		else
 		{
 			cout << "File Not Found !" << endl;
-			ElectiveCourses.close();
+			
 		}
 	}
 };

@@ -3,9 +3,10 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "../AcademicEntities/student.h"    
+/*#include "../AcademicEntities/student.h"  */  
 #include "Assessment.h"                   
 using namespace std;
+class student;
 class Course {
 protected:
     string	courseID;
@@ -36,6 +37,9 @@ public:
 	}
 	void setTeacherID(string id) { 
 		this->teacherID = id;
+	}
+	void setCreditHours(float creditHours) {
+		this->creditHours = creditHours;
 	}
 	int getCreditHours() {
 		return creditHours; 

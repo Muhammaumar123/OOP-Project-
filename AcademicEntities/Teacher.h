@@ -54,11 +54,12 @@ public:
 		if (Teachers.is_open())
 		{
 			Teachers << ID << "|" << name << "|" << email << "|" << AverageFeedback << endl;
+			Teachers.close();
 		}
 		else
 		{
 			cout << "File Not Found " << endl;
-			Teachers.close();
+			
 		}
 	}
 	float getAverageFeedback() { 

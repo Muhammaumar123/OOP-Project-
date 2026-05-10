@@ -36,11 +36,12 @@ public:
 		if (Assignments.is_open())
 		{
 			Assignments << courseID << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " << "|"<<" "<<"Weightage : "<<wt<<endl;
+			Assignments.close();
 		}
 		else
 		{
 			cout << "File Not Found !"; cout << endl;
-			Assignments.close();
+			
 		}
 	}
 	string getType()override {

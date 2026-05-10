@@ -38,11 +38,12 @@ public:
 		if (Quizzes.is_open())
 		{
 			Quizzes << courseID << " " << "|" << " " << QuizNo << " " << "|" << " " << rawScore << " " << "|" << " " << maxScore << " " << "|" << " " << type << " " <<"|"<<" "<<"Weightage : "<<" "<<"|"<<" "<<wt << endl;
+			Quizzes.close();
 		}
 		else
 		{
 			cout << "File Not Found !"; cout << endl;
-			Quizzes.close();
+			
 		}
 	}
 	string getType() override {

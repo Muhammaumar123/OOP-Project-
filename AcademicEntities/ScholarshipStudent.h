@@ -20,7 +20,7 @@ public:
 	}
 	ScholarshipStudent(float GPA, string ID, string name, string email, string type = "Scholarship Student") {
 		this->type = type;
-		
+		this->ID = ID;
 		minGPA = 3.2;
 		this->GPA = GPA;
 		this->name = name;
