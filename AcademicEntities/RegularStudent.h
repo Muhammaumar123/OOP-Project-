@@ -48,7 +48,7 @@ public:
 		cout << "Email : " << email << endl;
 		cout << "GPA : " << GPA << endl;
 	}
-	void viewTranscript() override{/*need some more data first*/ }
+	void viewTranscript() override;
 	float getGPA() {
 		return GPA;
 	}

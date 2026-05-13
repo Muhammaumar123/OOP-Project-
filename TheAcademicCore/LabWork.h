@@ -16,12 +16,13 @@ public:
 		LabWorkNo = 0;
 		wt = 0.0;
 	}
-	LabWork(int LabWorkNo, float rawScore, float maxScore, string courseID, string type = "LabWork", float wt)
+	LabWork(int LabWorkNo, string studentID , float rawScore, float maxScore, string courseID, float wt, string type = "LabWork")
 	{
 		this->LabWorkNo = LabWorkNo;
 		this->rawScore = rawScore;
 		this->maxScore = maxScore;
 		this->courseID = courseID;
+		this->studentID = studentID;
 		this->type = type;
 		this->wt = wt;
 	}

@@ -16,11 +16,12 @@ public:
 		this->rawScore = 0.0;
 		wt = 0.0;
 	}
-	Assignment(string CourseID, float maxScore, float rawScore,float wt) {
+	Assignment(string CourseID, string studentID,float maxScore, float rawScore,float wt) {
 		this->type = "Assignment";
 		this->courseID = CourseID;
 		this->maxScore = maxScore;
 		this->rawScore = rawScore;
+		this->studentID = studentID;
 		this->wt = wt;
 	}
 	void display() override {

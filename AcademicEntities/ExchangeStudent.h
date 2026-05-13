@@ -57,10 +57,7 @@ class ExchangeStudent :public student{
 			cout << "Percentage : " << percentage<< endl;
 		}
 
-		void viewTranscript() override {
-		//to show trancript i need data from course.h and some other files So let's Go 
-
-		}
+		void viewTranscript() override;
 
 		float getPercentage() { 
 			return percentage;

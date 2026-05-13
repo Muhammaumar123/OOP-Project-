@@ -8,8 +8,9 @@ protected:
 	string courseID;
 	float maxScore;
 	float rawScore;
-	string type;
 	string studentID;
+	string type;
+	
 public:
 	virtual void display() = 0;
 	virtual string getType() = 0;
@@ -31,4 +32,5 @@ public:
 	string getStudentID() {
 		return studentID;
 	}
+	
 };

@@ -13,15 +13,17 @@ public:
 		maxScore = 0.0;
 		rawScore = 0.0;
 		courseID = "";
+		studentID = "";
 		QuizNo = 0;
 		wt = 0.0;
 	}
-	Quiz(int QuizNo, float rawScore, float maxScore, string courseID, float wt, string type = "Quiz")
+	Quiz(int QuizNo, float rawScore, float maxScore,string StudentID, string courseID, float wt, string type = "Quiz")
 	{
 		this->QuizNo = QuizNo;
 		this->rawScore = rawScore;
 		this->maxScore = maxScore;
 		this->courseID = courseID;
+		this->studentID = StudentID;
 		this->type = type;
 		this->wt = wt;
 	}

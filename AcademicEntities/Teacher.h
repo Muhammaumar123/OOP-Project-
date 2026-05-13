@@ -5,16 +5,17 @@ using namespace std;
 class Teacher:public Abstract {
 
 	float AverageFeedback;
-	char ** list;
+	char ** list;//this stores the list of assigned course IDs
 	int number;//for now assuming that each teacher can be assigned a specific number of course IDs
 
 public:
+
 	Teacher() {
 		name = "";
 		email = "";
 		ID = "";
 		AverageFeedback = 0.0;
-		number = 3;//assuming 3
+		number = 5;//assuming 5
 		list = new char*[number];
 	}
 
@@ -28,7 +29,8 @@ public:
 	}
 
 	//course ID feature depends on the Course class 
-	
+	string getID() { return ID; }
+
 	void displayProfile() override{
 		cout << "ID : " << ID << endl;
 		cout << "Name : " << name << endl;
@@ -43,7 +45,7 @@ public:
 
 	//Feedback sytem 
 
-	void Feedback() {}
+	void Feedback();
 
 	~Teacher() {
 		delete[] list;

@@ -72,7 +72,7 @@ public:
 			status = "Active";
 		return GPA;
 	}
-	void viewTranscript() override {/*need some more data first*/}
+	void viewTranscript() override;
 	float getGPA() { 
 		return GPA; 
 	}

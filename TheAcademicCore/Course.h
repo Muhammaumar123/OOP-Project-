@@ -32,16 +32,22 @@ public:
 	string getCourseName() { 
 		return courseName;
 	}
-	string getTeacherID() {
+    const string getTeacherID() {
 		return teacherID;
 	}
 	void setTeacherID(string id) { 
 		this->teacherID = id;
 	}
+	void setCourseName(string name) {
+		this->courseName = name; 
+	}
+	void setCourseID(string id) {
+		this->courseID = id;
+	}
 	void setCreditHours(float creditHours) {
 		this->creditHours = creditHours;
 	}
-	int getCreditHours() {
+	const float getCreditHours() {
 		return creditHours; 
 	}
 	int getCapacity() {
@@ -52,6 +58,9 @@ public:
 	}
 	int getEnrollmentCount() { 
 		return EnrolledStudents.size(); 
+	}
+	void addAssessment(Assessment*a) {
+		Assessments.push_back(a);
 	}
 	virtual void display() = 0;
 };

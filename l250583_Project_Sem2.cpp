@@ -1,29 +1,27 @@
 #include <iostream>
 #include <fstream>
-
-
-#include "AcademicEntities/RegularStudent.h"
-#include "AcademicEntities/ScholarshipStudent.h"
-#include "AcademicEntities/ExchangeStudent.h"
-#include "AcademicEntities/Teacher.h"
-// The Academic Core
-#include "TheAcademicCore/Assessment.h"
-#include "TheAcademicCore/Course.h"
-#include "TheAcademicCore/Exam.h"
-#include "TheAcademicCore/Quiz.h"
-#include"TheAcademicCore/CoreCourse.h"
+#include"../OOP-Project-/Management/DatabaseManager.h"
+#include"../OOP-Project-/Management/Scheduler.h"
+#include"../OOP-Project-/Management/Section.h"
+#include"../OOP-Project-/Management/Venue.h"
+#include"../OOP-Project-/AcademicEntities/Abstract.h"
+#include"../OOP-Project-/AcademicEntities/ExchangeStudent.h"
+#include"../OOP-Project-/AcademicEntities/ScholarshipStudent.h"
+#include"../OOP-Project-/AcademicEntities/RegularStudent.h"
+#include"../OOP-Project-/AcademicEntities/student.h"
+#include"../OOP-Project-/AcademicEntities/Teacher.h"
+#include"../OOP-Project-/TheAcademicCore/Assessment.h"
+#include"../OOP-Project-/TheAcademicCore/Assignment.h"
+#include"../OOP-Project-/TheAcademicCore/CoreCourse.h"
+#include"../OOP-Project-/TheAcademicCore/ElectiveCourse.h"
+#include"../OOP-Project-/TheAcademicCore/Exam.h"
+#include"../OOP-Project-/TheAcademicCore/Course.h"
+#include"../OOP-Project-/TheAcademicCore/LabCourse.h"
+#include"../OOP-Project-/TheAcademicCore/LabWork.h"
+#include"../OOP-Project-/TheAcademicCore/Quiz.h"
 using namespace std;
 int main() {
-	RegularStudent obj("M Umar Imran", "muhammadumarimran43@gmail.com", 4.0, "787878");
-	CoreCourse mycourse;
-	mycourse.getCourseName()="Mycourse";
-	mycourse.getCourseID() = "7878";
-	mycourse.setCreditHours(3.0);
-	mycourse.setCapacity(50);
-	mycourse.enrollStudents(&obj);
-	obj.addCourse(&mycourse);
-	cout << endl << endl << endl;
-	obj.viewTranscript();
-	system("pause");
-	return 0;
+    
+    system("pause");
+    return 0;
 }
