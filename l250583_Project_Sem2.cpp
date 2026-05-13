@@ -58,12 +58,12 @@ void adminAddStudent() {
 	cout << "1. Regular Student" << endl;
 	cout << "2. Scholarship Student" << endl;
 	cout << "3. Exchange Student" << endl;
-	cout << "Enter choic : ";
+	cout << "Enter choice : ";
 	cin >> choice;
 	string name, ID, email;
 	float GPA, percentage;
 	cout << "Enter Name : "; 
-	cin >> name;
+	getline(cin>>ws, name);
 	cout << "Enter ID : "; 
 	cin >> ID;
 	cout << "Enter Email : "; 
@@ -111,13 +111,19 @@ void adminAddTeacher() {
 	string name, ID, email;
 	cout << "=====================================" << endl;
 	cout << "Enter Name : "; 
-	cin >> name;
+	getline(cin >> ws, name);
 	cout << "Enter ID : "; 
 	cin >> ID;
 	cout << "Enter Email : "; 
 	cin >> email;
-	teachers.push_back(new Teacher(name, ID, email));
+	Teacher* newTeacher = new Teacher(name, ID, email);
 	cout << "Teacher added !" << endl;
+	cout << "Now Assign Courses to Teacher \n";
+	string courseID;
+	cout << "Enter the Course ID:\n";
+	cin >> courseID;
+	newTeacher->assignCourse(courseID);
+	teachers.push_back(newTeacher);
 	cout << "=====================================" << endl;
 }
 
@@ -152,7 +158,7 @@ void adminAddCourse() {
 	cout << "Enter Teacher ID : ";
 cin >> teacherID;
 	cout << "Enter Course Name : "; 
-cin >> courseName;
+getline(cin>>ws, courseName);
 	cout << "Enter Credit Hours : "; 
 cin >> creditHours;
 	cout << "Enter Capacity : "; 
@@ -180,7 +186,7 @@ void adminAddSection() {
 	int capacity;
 	cout << "=====================================" << endl;
 	cout << "Enter Section Name : "; 
-        cin >> sectionName;
+        getline(cin>>ws, sectionName);
 	cout << "Enter Course ID : "; 
    cin >> courseID;
 	cout << "Enter Teacher ID : "; 
